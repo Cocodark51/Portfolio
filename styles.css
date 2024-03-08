@@ -196,10 +196,6 @@ p{
     border-radius: 10px;
 }
 
-.grid .grid-content .grid-item:nth-child(3){
-    place-self: center;
-}
-
 .grid .grid-content .grid-item:hover{
     transform: scale(1.1);
     transition: 0.5s ease;
@@ -222,7 +218,6 @@ p{
 .contact{
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 100px;
 }
 
@@ -232,8 +227,9 @@ p{
 }
 
 .contact .containerContact .cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
     margin-top: 20px;
@@ -242,11 +238,11 @@ p{
 .contact .containerContact .cardContact{
     display: flex;
     align-items: center;
+    text-align: center;
     border: 3px solid rgba(51, 53, 51);
     border-radius: 10px;
     width: 300px;
     height: 50px;
-    text-align: center;
 }
 
 .contact .containerContact .cardContact:hover{
@@ -316,6 +312,15 @@ p{
 
     .contact .containerContact .cards{
         flex-direction: column;
+    }
+
+    .contact .containerContact .cardContact{
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .contact .containerContact .cardContact a{
+        text-decoration: underline;
     }
 }
 
