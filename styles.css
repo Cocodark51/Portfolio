@@ -13,6 +13,10 @@ body{
     background-color: #E8EDDF;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 li {
     list-style: none;
 }
