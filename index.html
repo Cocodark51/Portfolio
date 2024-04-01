@@ -111,7 +111,7 @@
                 <h4>Thermomètre de Piscine</h4>
                 <p>Projet Arduino d'un thermomètre connecté pour surveiller la température de ma piscine à distance depuis un site internet.
                 <br><br>
-                <a href="PagesProjets/ThermometrePiscine.html" style="color: rgba(51, 53, 51); padding: 20px;" target="_blank">En savoir plus</a></p>
+                <a href="PagesProjets/ThermometrePiscine.html" style="color: rgba(51, 53, 51); padding: 20px;">En savoir plus</a></p>
             </div>
             <div class="grid-item">
                 <h4>Site de vente de miel</h4>
@@ -124,13 +124,13 @@
                 <p>Projet de StreamDeck, réalisé grâce à l'impression 3D et Arduino qui offre la possibilité de contrôler diverses 
                     applications et processus en temps réel.
                 <br><br>
-                <a href="PagesProjets/StreamDeck.html" style="color: rgba(51, 53, 51); padding: 20px;" target="_blank">En savoir plus</a></p>
+                <a href="PagesProjets/StreamDeck.html" style="color: rgba(51, 53, 51); padding: 20px;">En savoir plus</a></p>
             </div>
             <div class="grid-item">
                 <h4>Thermomètre Connecté</h4>
                 <p>Projet de thermomètre connecté permettant de visualiser la température à distance via un site internet.
                 <br><br>
-                <a href="PagesProjets/Thermometre.html" style="color: rgba(51, 53, 51); padding: 20px;" target="_blank">En savoir plus</a></p>
+                <a href="PagesProjets/Thermometre.html" style="color: rgba(51, 53, 51); padding: 20px;">En savoir plus</a></p>
             </div>
         </div>
     </div>
@@ -169,25 +169,31 @@
         <div class="containerContact">
             <h1>Me Contacter</h1>
             <div class="cards">
-                <div class="cardContact">
-                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                    <div class="txt"><p>corentinmarcoux51@gmail.com</p></div>
-                </div>
+                <a href="#" onclick="openGmail('corentinmarcoux51@gmail.com')" style="color: rgba(51, 53, 51);font-family: Hind Madurai;">
+                    <div class="cardContact">
+                        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                        <div class="txt"><p>Envoyez-moi un email</p></div>
+                    </div>
+                </a>
 
                 <div class="cardContact">
                     <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
                     <div class="txt"><p>06.80.67.15.48</p></div>
                 </div>
 
-                <div class="cardContact">
-                    <div class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                    <div class="txt"><p><a href="https://www.linkedin.com/in/corentin-marcoux-3055142b0/" style="color: rgba(51, 53, 51);font-family: Hind Madurai;" target="_blank">corentin_mrcx</a></p></div>
-                </div>
+                <a href="https://www.linkedin.com/in/corentin-marcoux-3055142b0/" style="color: rgba(51, 53, 51);font-family: Hind Madurai;" target="_blank">
+                    <div class="cardContact">
+                        <div class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        <div class="txt"><p>corentin_mrcx</p></div>
+                    </div>
+                </a>
 
-                <div class="cardContact">
-                    <div class="icon"><i class="fa fa-github" aria-hidden="true"></i></div>
-                    <div class="txt"><p><a href="https://github.com/corentinmrcx" style="color: rgba(51, 53, 51);font-family: Hind Madurai;" target="_blank">corentinmrcx</a></p></div>
-                </div>
+                <a href="https://github.com/corentinmrcx" style="color: rgba(51, 53, 51);font-family: Hind Madurai;" target="_blank">
+                    <div class="cardContact">
+                        <div class="icon"><i class="fa fa-github" aria-hidden="true"></i></div>
+                        <div class="txt"><p>corentinmrcx</p></div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -212,17 +218,39 @@
     </footer>
 
     <script>
-        const bouton = document.querySelector('.bouton')
-        const boutonIcon = document.querySelector('.bouton i')
-        const menu = document.querySelector('.menu')
+        const bouton = document.querySelector('.bouton');
+        const boutonIcon = document.querySelector('.bouton i');
+        const menu = document.querySelector('.menu');
 
-        bouton.onclick = function(){
-            menu.classList.toggle('open')
-            const isOpen = menu.classList.contains('open')
+        function toggleMenu() {
+            menu.classList.toggle('open');
+            const isOpen = menu.classList.contains('open');
 
             boutonIcon.classList = isOpen
                 ? 'fa fa-times'
-                : 'fa fa-bars'
+                : 'fa fa-bars';
+        }
+
+        // Ajouter un écouteur d'événement sur le bouton
+        bouton.addEventListener('click', toggleMenu);
+
+        // Vérifier si le media query est actif au chargement de la page
+        if (window.matchMedia('(max-width: 1200px)')) {
+            // Si oui, masquer le menu par défaut
+            menu.classList.remove('open');
+        }
+
+        // Ajouter un écouteur d'événement sur le media query
+        mediaQuery.addEventListener('change', function() {
+        // Si le media query est activé, masquer le menu
+        if (mediaQuery.matches) {
+            menu.classList.remove('open');
+        }
+        });
+
+
+        function openGmail(email) {
+        window.location.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + email;
         }
     </script>
 </body>
