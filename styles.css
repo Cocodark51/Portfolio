@@ -34,6 +34,7 @@ a:hover{
 h1{    
     font-family: Montserrat;
     color: rgba(51, 53, 51);
+    padding: 20px 0 20px 0;
 }
 
 h4{    
@@ -179,11 +180,17 @@ p{
 /*----------------------------------------*/
 .grid {
     display: flex;
-    justify-content: center;
-    margin-top: 60px;
+    flex-direction: column;
+    margin-top: 25px;
+    align-items: center; 
 }
 
-.grid .grid-content{
+.title-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.grid .grid-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -234,7 +241,6 @@ p{
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    margin-top: 20px;
 }
 
 .skills .skills_contain .container_skills .skills_cards{
@@ -271,7 +277,6 @@ p{
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    margin-top: 20px;
 }
 
 .contact .containerContact .cardContact{
@@ -356,6 +361,10 @@ footer {
     .menu{
         display: block;
         
+    }
+
+    h1{
+        text-align: center;
     }
 
     /*---*/
