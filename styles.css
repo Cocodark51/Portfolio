@@ -2,15 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100;300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100;300;400;500&display=swap');
 
+:root {
+    --primary-color: #333533;
+    --secondary-color: #E8EDDF;
+    --font-familyTitle: Montserrat;
+    --font-familyP: Hind Madurai;
+  }
+
 *{
     margin: 0;
     padding: 0;
+    /*font-family: var(--font-family);*/
 }
 
 body{
     height: 100vh;
-    /*background-color: #fffdf3;*/
-    background-color: #E8EDDF;
+    background-color: var(--secondary-color);
 }
 
 body::-webkit-scrollbar{
@@ -24,7 +31,7 @@ li {
 a {
     text-decoration: none;
     color: white;
-    font-family: Montserrat;
+    font-family: var(--font-familyTitle);
 }
 
 a:hover{
@@ -32,19 +39,19 @@ a:hover{
 }
 
 h1{    
-    font-family: Montserrat;
-    color: rgba(51, 53, 51);
+    font-family: var(--font-familyTitle);
+    color: var(--primary-color);
     padding: 20px 0 20px 0;
 }
 
 h4{    
-    font-family: Montserrat;
-    color: rgba(51, 53, 51);
+    font-family: var(--font-familyTitle);
+    color: var(--primary-color);
 }
 
 p{
-    font-family: Hind Madurai;
-    color: rgba(51, 53, 51);
+    font-family: var(--font-familyP);
+    color:  var(--primary-color);
 }
 
 /*----------------------------------------*/
@@ -52,7 +59,7 @@ p{
     width: 100%;
     height: 60px;
     display: flex;
-    background-color: #333533;
+    background-color: var(--primary-color);
     align-items: center;
     justify-content: space-between;
 }
@@ -73,7 +80,6 @@ p{
     cursor: pointer;
     padding-right: 20px;
     display: none;
-
 }
 
 /* Menu */ 
@@ -104,7 +110,7 @@ p{
 /*----------------------------------------*/
 .container{
     display: flex;
-    margin: 100px 60px 100px 60px;
+    padding: 100px 60px 100px 60px;
     align-items: center;
     justify-content: space-around;
 }
@@ -118,7 +124,7 @@ p{
 .container .image_profile img{
     width: 100%;
     height: auto;
-    border: 3px solid rgba(51, 53, 51);
+    border: 3px solid  var(--primary-color);
     border-radius: 50%;
     overflow: hidden;
 }
@@ -132,16 +138,14 @@ p{
     flex: 2;
     box-sizing: border-box;
     padding: 20px;
-    /*border: 3px solid black;
-    border-radius: 10px;*/
 }
 
 .container .about_profil h1{
     font-size: 50px;
 }
 
-
-.button{
+/*----------------------------------------*/
+/*.button{
     margin-top: 20px;
 }
 
@@ -159,8 +163,55 @@ p{
     color: white;
     transition: ease;
     transition: 0.5s;
+}*/
+
+button {
+    margin-top: 20px;
+    text-align: center;
+    border: 2px solid  var(--primary-color);
+    border-radius: 10px;
+    color: var(--primary-color);
+    padding: 15px 30px;
+    cursor: pointer;
+
+
+    transition: background-color 0.4s, transform 0.1s;
+    overflow: hidden;
+    position: relative;
+
+    background-color: var(--secondary-color);
 }
 
+button::before {
+    content: '';
+    background: var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    transform: translateY(-100%);
+    transition: transform 0.4s;
+    z-index: 0;
+}
+
+button:hover{
+    color: white;
+}
+
+button:hover::before {
+    transform: translateY(0);
+}
+
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+
+button:active {
+    transform: scale(0.95);
+}
 /*----------------------------------------*/
 .about{
     display: flex;
@@ -170,8 +221,6 @@ p{
 .aboutText{
     width: 60%;
     padding: 20px;
-    /*border: 3px solid rgba(51, 53, 51);
-    border-radius: 10px;*/
 }
 
 .aboutText p{
@@ -220,9 +269,8 @@ p{
 .grid .grid-content .grid-item p{
     padding: 0px 20px 0px 20px;
     text-align: center;
+    padding: 10px;
 }
-
-
 
 /*----------------------------------------*/
 .skills{
